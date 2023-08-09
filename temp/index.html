@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h2{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <!-- importing all macros -->
+    {% from "macros.html" import welcome %}
+    {% from "macros.html" import get_sum %}
+    {% from "macros.html" import get_fac %}
+    {% from "macros.html" import example %}
+    {% from "macros.html" import cake %}
+    {% from "variables.html" import guy %}
+
+    <h2>get_sum</h2>
+    {{ get_sum(5, 3) }}
+    {{ get_sum(5, 0) }}
+    {{ get_sum(5, 3, 10, 100) }}
+    {{ get_sum(4, 6, 1, 67, 2, 460) }}
+
+    <h2>welcome</h2>
+    {{ welcome("Mark") }}
+    {{ welcome() }}
+
+    <h2>example</h2>
+    {{ example(1, 2, 3, a=1, b=2, c=3) }}
+    
+    <h2>cake</h2>
+    {{ cake("eggs", "batter", "flour", "icing") }}
+
+    <h2>get_fac</h2>
+    {{ get_fac(5) }}
+    {{ get_fac(0) }}
+    {{ get_fac(-1) }}
+
+    <h2>guy variable</h2>
+    <p>{{ guy }}</p>
+</body>
+</html>
